@@ -1,10 +1,10 @@
 = My WoW Armory Ruby API
 
-A ruby library wrapping (most of) the MyWoWArmory API. (http://www.mywowarmory.com)
+Ruby wrapper around the MyWoWArmory API http://www.mywowarmory.com/api
 
 ==DESCRIPTION
 
-This library uses ActiveResource and activeresource_throttle to provide simple, reliable access to the MyWoWArmory API. Good for building reporting scripts and simple apps.
+This library uses HTTParty to provide simple, reliable access to the MyWoWArmory API. Good for building reporting scripts and simple apps.
 
 Note that this library does not support the complete MyWoWArmory API at this time. See Features/Issues below for details.
 

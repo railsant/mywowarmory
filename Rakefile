@@ -14,11 +14,11 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "mywowarmory"
+  gem.name = "mywowarmory-ruby"
   gem.homepage = "http://github.com/railsant/mywowarmory"
   gem.license = "MIT"
-  gem.summary = %Q{A ruby library wrapping (most of) the MyWoWArmory API. (http://www.mywowarmory.com)}
-  gem.description = %Q{A ruby library wrapping (most of) the MyWoWArmory API. (http://www.mywowarmory.com)}
+  gem.summary = %Q{Ruby wrapper around the MyWoWArmory API http://www.mywowarmory.com/api}
+  gem.description = %Q{This library uses HTTParty to provide simple, reliable access to the MyWoWArmory API. Good for building reporting scripts and simple apps. Note that this library does not support the complete MyWoWArmory API at this time. See Features/Issues below for details. }
   gem.email = "tkwong@railsant.com"
   gem.authors = ["Benjamin Wong"]
   # dependencies defined in Gemfile
@@ -42,8 +42,8 @@ end
 
 task :default => :test
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+require 'rdoc/task'
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
