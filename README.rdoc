@@ -10,10 +10,16 @@ Note that this library does not support the complete MyWoWArmory API at this tim
 
 ==USAGE
 
-TODO
+  ree-1.8.7-2010.02 >     response = api.get_profile('us','kul-tiras','gary')
+   => {"id"=>1341, "path"=>"http://www.mywowarmory.com/profile.php?id=1341&api=true"} 
+  ree-1.8.7-2010.02 > response
+   => {"id"=>1341, "path"=>"http://www.mywowarmory.com/profile.php?id=1341&api=true"} 
+  ree-1.8.7-2010.02 > response['id']
+   => 1341 
 
 ==FEATURES/PROBLEMS
 
+TODO
 
 ==TEST SUITE
 
