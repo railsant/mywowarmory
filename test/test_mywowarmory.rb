@@ -4,4 +4,9 @@ class TestMywowarmory < Test::Unit::TestCase
   should "probably rename this file and start testing for real" do
     # flunk "hey buddy, you should probably rename this file and start testing for real"
   end
+  
+  should "get profile" do 
+    api = MyWoWArmory.new('api','vbarrack')
+    api.get_profile('us','kul-tiras','gary')
+  end
 end
