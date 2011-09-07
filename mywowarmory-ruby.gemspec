@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/mywowarmory.rb",
+    "mywowarmory-ruby.gemspec",
     "test/helper.rb",
     "test/test_mywowarmory.rb"
   ]
