@@ -1,8 +1,32 @@
-= mywowarmory
+= My WoW Armory Ruby API
 
-Description goes here.
+A ruby library wrapping (most of) the MyWoWArmory API. (http://www.mywowarmory.com)
 
-== Contributing to mywowarmory
+==DESCRIPTION
+
+This library uses ActiveResource and activeresource_throttle to provide simple, reliable access to the MyWoWArmory API. Good for building reporting scripts and simple apps.
+
+Note that this library does not support the complete MyWoWArmory API at this time. See Features/Issues below for details.
+
+==USAGE
+
+TODO
+
+==FEATURES/PROBLEMS
+
+
+==TEST SUITE
+
+This library includes a fairly thorough set of unit and integration tests. The unit tests can be run with the “rake” command.
+
+The integration tests require a My WoW Armory account. It is best to use a trial account when running these tests.
+
+The credentials may be entered in test/test_helper.rb. To run the integration suite:
+
+rake test:integration
+Note that the integration test structure is somewhat unorthodox, as it requires tests to run in a particular order. Examine this to see how the integration suite works.
+
+== Contributing to My WoW Armory API
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
@@ -14,6 +38,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Benjamin Wong. See LICENSE.txt for
+Copyright (c) 2011 RailsAnt. See LICENSE.txt for
 further details.
 

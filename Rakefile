@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "mywowarmory"
   gem.homepage = "http://github.com/railsant/mywowarmory"
   gem.license = "MIT"
-  gem.summary = %Q{one-line summary of your gem}
-  gem.description = %Q{longer description of your gem}
+  gem.summary = %Q{A ruby library wrapping (most of) the MyWoWArmory API. (http://www.mywowarmory.com)}
+  gem.description = %Q{A ruby library wrapping (most of) the MyWoWArmory API. (http://www.mywowarmory.com)}
   gem.email = "tkwong@railsant.com"
   gem.authors = ["Benjamin Wong"]
   # dependencies defined in Gemfile
