@@ -8,6 +8,7 @@ class TestMywowarmory < Test::Unit::TestCase
   should "get profile" do 
     api = MyWoWArmory.new
     response = api.get_profile('us','kul-tiras','gary')
+
     # assert(response.path)
   end
 end
