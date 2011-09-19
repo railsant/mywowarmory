@@ -4,6 +4,10 @@ source "http://rubygems.org"
 #   gem "activesupport", ">= 2.3.5"
 gem 'httparty'
 gem 'wow_community_api'
+gem 'multi_json'
+gem 'yajl-ruby'
+gem 'json'
+gem 'json_pure'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

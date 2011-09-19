@@ -13,14 +13,7 @@ class TestMywowarmory < Test::Unit::TestCase
     puts response.inspect
     response = api.get_profile("us", "Mal'Ganis", 'gary')
     puts response.inspect
-    
-    # require 'cgi'
-    # require 'uri'
-    # string = 'Iñtërnâtiônàlizætiøn'
-    # puts URI.encode(string)
-    # puts URI.escape(string, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
-    # puts URI.escape(string.force_encoding('ascii'))
-    # puts CGI.escape(string)
-    # assert(response.path)
+    response = api.get_profile("us", "Kel'Thuzad", 'Chaoticblade')    
+    puts response.inspect
   end
 end

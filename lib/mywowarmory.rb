@@ -2,6 +2,7 @@ require 'httparty'
 require 'ostruct'
 require 'open-uri'
 require 'wow_community_api'
+require 'multi_json'
 
 class MyWoWArmory
   include HTTParty
@@ -20,7 +21,7 @@ class MyWoWArmory
     realm = WowCommunityApi::Realm.find_by_name(realm).slug
     
     options.merge!(:query => {:name => character_name, :server => realm, :country => country})
-    self.class.get("/api/getprofile.php", options).parsed_response
+    MultiJson.decode(self.class.get("/api/getprofile.php", options).parsed_response)
   end
   class Profile < OpenStruct
   end
