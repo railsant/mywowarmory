@@ -1,9 +1,11 @@
 require 'httparty'
 require 'ostruct'
-require 'cgi'
+require 'open-uri'
+require 'wow_community_api'
 
 class MyWoWArmory
   include HTTParty
+  # base_uri 'www.mywowarmory.com'
   base_uri 'www.mywowarmory.com'
   
   # def initialize(username,password,options={})
@@ -12,7 +14,13 @@ class MyWoWArmory
   
   def get_profile(country,realm,character_name,options={})
     # options.merge!({:basic_auth => @auth})
-    self.class.get("/api/profiles/#{country}/#{realm.tr('^a-zA-Z','-').downcase}/#{CGI::escape(character_name)}.json", options).parsed_response
+    name = URI::encode(character_name)
+    # self.class.get("/api/profiles/#{country}/#{realm.tr('^a-zA-Z','-').downcase}/#{name}.json", options).parsed_response
+    
+    realm = WowCommunityApi::Realm.find_by_name(realm).slug
+    
+    options.merge!(:query => {:name => character_name, :server => realm, :country => country})
+    self.class.get("/api/getprofile.php", options).parsed_response
   end
   class Profile < OpenStruct
   end
