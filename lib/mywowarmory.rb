@@ -18,8 +18,11 @@ class MyWoWArmory
     name = URI::encode(character_name)
     # self.class.get("/api/profiles/#{country}/#{realm.tr('^a-zA-Z','-').downcase}/#{name}.json", options).parsed_response
     
-    # realm = WowCommunityApi::Realm.find_by_name(realm).slug # Bug for WowCommunityApi... 
-    realm = WowCommunityApi::Realm.find_all.select{|r| r.name == realm}.first.slug
+    realm_response = HTTParty.get("http://#{country}.battle.net/api/wow/realm/status?realms=#{realm}").parsed_response['realms']
+    if realm_response.count == 1 
+      realm = realm_response['slug'] 
+    end
+    
     
     options.merge!(:query => {:name => character_name, :server => realm, :country => country})
     MultiJson.decode(self.class.get("/api/getprofile.php", options).parsed_response)
