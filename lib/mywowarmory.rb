@@ -6,7 +6,6 @@ require 'multi_json'
 
 class MyWoWArmory
   include HTTParty
-  # base_uri 'www.mywowarmory.com'
   base_uri 'www.mywowarmory.com'
   
   # def initialize(username,password,options={})
@@ -15,16 +14,18 @@ class MyWoWArmory
   
   def get_profile(country,realm,character_name,options={})
     # options.merge!({:basic_auth => @auth})
-    name = URI::encode(character_name)
-    # self.class.get("/api/profiles/#{country}/#{realm.tr('^a-zA-Z','-').downcase}/#{name}.json", options).parsed_response
+    
+    # Hack to get the character_name encode once
+    name = URI::encode(URI::decode(character_name))
     
     # Check the realm
     realm_response = HTTParty.get("http://#{country}.battle.net/api/wow/realm/status", :query => {:realms => URI.encode(realm)} ).parsed_response
     realm = realm_response['realms'].select{|r| r['name'] == realm}.first['slug']
     
-    
-    options.merge!(:query => {:name => character_name, :server => realm, :country => country})
-    MultiJson.decode(self.class.get("/api/getprofile.php", options).parsed_response)
+    query = {:name => character_name, :server => realm, :country => country}
+    query.merge!(:style => options[:style]) if options[:style].present?
+
+    MultiJson.decode(self.class.get("/api/getprofile.php", options.merge(:query => query)).parsed_response)
   end
   class Profile < OpenStruct
   end
