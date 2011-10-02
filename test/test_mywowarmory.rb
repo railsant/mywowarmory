@@ -1,4 +1,5 @@
 require 'helper'
+require 'iconv'
 
 class TestMywowarmory < Test::Unit::TestCase
   # should "probably rename this file and start testing for real" do
@@ -7,8 +8,15 @@ class TestMywowarmory < Test::Unit::TestCase
   
   should "get profile" do 
     api = MyWoWArmory.new
-    # response = api.get_profile('us','kul-tiras','gary')
-    # puts response.inspect
+    
+    # puts "Ясеневый лес".gsub("'","").parameterize.to_yaml
+    # 
+    # puts Iconv.iconv("ascii//translit", "iso-8859-1", "Ясеневый лес")[0]
+    # puts "Ясеневый лес".gsub("'","").gsub(' ', '-').mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
+    response = api.get_profile('eu','Ясеневый лес','Ясеневый лес')
+    puts response.inspect
+    response = api.get_profile('us','kul-tiras','gary')
+    puts response.inspect
     # response = api.get_profile('us','Tichondrius','Slapshøt')
     # puts response.inspect
     response = api.get_profile("us", "Mal'Ganis", 'gary')
