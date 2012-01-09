@@ -24,7 +24,7 @@ class MyWoWArmory
     # realm_response = HTTParty.get("http://#{country}.battle.net/api/wow/realm/status", :query => {:realms => URI.encode(realm)} ).parsed_response
     # realm = realm_response['realms'].select{|r| r['name'] == realm}.first['slug']
     
-    query = {:name => character_name, :server => realm, :country => country}
+    query = {:name => name, :server => realm, :country => country}
     query.merge!(:style => options[:style]) if options[:style].present?
 
     MultiJson.decode(self.class.get("/api/getprofile.php", options.merge(:query => query)).parsed_response)
