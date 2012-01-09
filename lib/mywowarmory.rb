@@ -7,8 +7,7 @@ require 'multi_json'
 
 class MyWoWArmory
   include HTTParty
-  # base_uri 'www.mywowarmory.com'
-  base_uri 'localhost'
+  base_uri 'www.mywowarmory.com'
   
   # def initialize(username,password,options={})
   #   @auth = {:username => username, :password => password}
