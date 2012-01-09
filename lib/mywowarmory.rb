@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'httparty'
 require 'ostruct'
 require 'open-uri'
@@ -6,7 +7,8 @@ require 'multi_json'
 
 class MyWoWArmory
   include HTTParty
-  base_uri 'www.mywowarmory.com'
+  # base_uri 'www.mywowarmory.com'
+  base_uri 'localhost'
   
   # def initialize(username,password,options={})
   #   @auth = {:username => username, :password => password}
@@ -15,8 +17,9 @@ class MyWoWArmory
   def get_profile(country,realm,character_name,options={})
     # options.merge!({:basic_auth => @auth})
     
-    # Hack to get the character_name encode once
-    name = URI::encode(URI::decode(character_name))
+    # detect the input as URL encoded or not by finding "%NN" character
+    name = character_name.match(/%[0-9A-F]{2}/i) ? character_name : URI::encode(character_name)
+    # name = URI::encode(URI::decode(character_name))
     
     # Check the realm
     # realm_response = HTTParty.get("http://#{country}.battle.net/api/wow/realm/status", :query => {:realms => URI.encode(realm)} ).parsed_response
