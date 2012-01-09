@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{mywowarmory-ruby}
-  s.version = "0.1.9"
+  s.name = "mywowarmory-ruby"
+  s.version = "0.1.10"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Benjamin Wong"]
-  s.date = %q{2011-10-02}
-  s.description = %q{This library uses HTTParty to provide simple, reliable access to the MyWoWArmory API. Good for building reporting scripts and simple apps. Note that this library does not support the complete MyWoWArmory API at this time. See Features/Issues below for details. }
-  s.email = %q{tkwong@railsant.com}
+  s.date = "2012-01-09"
+  s.description = "This library uses HTTParty to provide simple, reliable access to the MyWoWArmory API. Good for building reporting scripts and simple apps. Note that this library does not support the complete MyWoWArmory API at this time. See Features/Issues below for details. "
+  s.email = "tkwong@railsant.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -29,14 +29,13 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/test_mywowarmory.rb"
   ]
-  s.homepage = %q{http://github.com/railsant/mywowarmory}
+  s.homepage = "http://github.com/railsant/mywowarmory"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Ruby wrapper around the MyWoWArmory API http://www.mywowarmory.com/api}
+  s.rubygems_version = "1.8.10"
+  s.summary = "Ruby wrapper around the MyWoWArmory API http://www.mywowarmory.com/api"
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
