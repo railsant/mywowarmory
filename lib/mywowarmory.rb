@@ -22,7 +22,7 @@ class MyWoWArmory
     
     # Check the realm
     realm_response = HTTParty.get("http://#{country}.battle.net/api/wow/realm/status", :query => {:realms => URI.encode(realm)} ).parsed_response
-    realm = realm_response['realms'].select{|r| r['name'] == realm}.first['slug']
+    realm = realm_response['realms'].select{|r| r['name'] == realm}.first['slug'] rescue realm # if realm not found, may be input is slug
     
     query = {:name => name, :server => realm, :country => country}
     query.merge!(:style => options[:style]) if options[:style].present?

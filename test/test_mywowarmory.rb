@@ -57,5 +57,11 @@ class TestMywowarmory < Test::Unit::TestCase
     
     response = api.get_profile "us","Kilrogg", "Lik%C3%AAthis"
     puts response.inspect
+    
+    response = api.get_profile "eu","Pozzo dell'Eternità", "Hertz"
+    puts response.inspect
+    
+    response = api.get_profile "eu","Pozzodell'Eternità", "Hertz"
+    puts response.inspect
   end
 end
