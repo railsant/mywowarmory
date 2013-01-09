@@ -21,8 +21,8 @@ class MyWoWArmory
     # name = URI::encode(URI::decode(character_name))
     
     # Check the realm
-    # realm_response = HTTParty.get("http://#{country}.battle.net/api/wow/realm/status", :query => {:realms => URI.encode(realm)} ).parsed_response
-    # realm = realm_response['realms'].select{|r| r['name'] == realm}.first['slug']
+    realm_response = HTTParty.get("http://#{country}.battle.net/api/wow/realm/status", :query => {:realms => URI.encode(realm)} ).parsed_response
+    realm = realm_response['realms'].select{|r| r['name'] == realm}.first['slug']
     
     query = {:name => name, :server => realm, :country => country}
     query.merge!(:style => options[:style]) if options[:style].present?
