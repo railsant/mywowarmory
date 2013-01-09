@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Benjamin Wong"]
-  s.date = "2012-01-09"
+  s.date = "2013-01-09"
   s.description = "This library uses HTTParty to provide simple, reliable access to the MyWoWArmory API. Good for building reporting scripts and simple apps. Note that this library does not support the complete MyWoWArmory API at this time. See Features/Issues below for details. "
   s.email = "tkwong@railsant.com"
   s.extra_rdoc_files = [
